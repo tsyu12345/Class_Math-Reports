@@ -1,0 +1,110 @@
+\documentclass{article}[jsarticle]
+\usepackage[T1]{fontenc}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{lmodern}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{nccmath}
+\usepackage{amsthm}
+\usepackage{multirow}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{wrapfig}
+\usepackage{here}
+\usepackage{float}
+\usepackage{ascmac}
+\usepackage{url}
+
+\title{数理科学概論 課題1}
+\author{高林秀 \\ 三宅研究室 博士前期課程1年 \\ V-CampusID : 23vr008n}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{section}{-1}
+
+\section{問題概要}
+本課題の問題は以下1～3の内容である。以降の章でそれぞれについて回答するものとする。
+
+\begin{enumerate}
+    \item 多変数関数として表すことができるものごとの例を考え、数式で示せ。
+    \begin {itemize}
+    \item 数式に使う変数は単位も含めて定義を説明すること
+    \item 機械学習で取り組んでみたい課題に関することやビジネス課題を想定するが、趣味や身近なものごとなど、何でもよい
+    \item 調べて例を見つけるのではなく、自分で考えてみてほしい
+    \item モデルとして正確であることは求めない
+    \end {itemize}
+
+    \item 上記で挙げた関数の例を、各変数で偏微分せよ (偏導関数=数式で示す)。 \par
+    また、各変数の値に適当な値を設定し、偏微分係数 (具体的数値) を求め、
+    その数値が何を意味するかを説明せよ。
+    \begin {itemize}
+        \item ただし偏微分係数同士は一般には単位が違うので、数値を直接比較することに意味はないことに注意
+    \end {itemize}
+
+    \item 各変数の間に依存関係があるかどうかを考察せよ。
+    \begin{itemize}
+        \item ここで変数とは関数の入力となる値のこと。\par 
+        また、依存関係とは関数の式に現れている関係ではなく、
+        変数同士自体の関係のこと。
+    \end{itemize}
+
+\end{enumerate}
+
+
+\section{問1}
+
+    \subsection{問題文}
+        多変数関数として表すことができるものごとの例を考え、数式で示せ。
+
+    \subsection{解答}
+        \begin{itemize}
+            \item 解答 : 乗車率（混雑率）
+            \begin{flalign*}
+                R(x, y) &= \frac{x}{y} &\\
+                R(x, y) &\text{乗車率}, x \text{乗車人員}, y \text{輸送力} &
+            \end{flalign*}
+        \end{itemize}
+        乗車率の定義は、一般社団法人 日本民営鉄道協会のページから引用した。
+        \begin{quote}
+            "輸送人員÷輸送力"で算出される混雑度の指標のことを「混雑率」といいます。都市鉄道の主要路線の混雑率は、各路線の"最混雑区間における１時間あたりの平均混雑率"として毎年公表されています。\par
+            ...（中略）...\par
+            それぞれの混雑率の目安は次のとおりです。\par 
+            ［１００％］＝定員乗車。座席につくか、吊り革につかまるか、ドア付近の柱につかまることができる。\par
+            ［１５０％］＝肩が触れ合う程度で、新聞は楽に読める。\par 
+            ［１８０％］＝体が触れ合うが、新聞は読める。\par 
+            ［２００％］＝体が触れ合い、相当な圧迫感がある。しかし、週刊誌なら何とか読める。\par
+            ［２５０％］＝電車が揺れるたびに、体が斜めになって身動きできない。手も動かせない。\par
+        \end{quote}
+        今回は、乗車率を$R$,乗車人員数を$x$,輸送定員数を$y$とした、乗車率$R$を求める多変数関数を、
+        $R(x, y) = \frac{x}{y}$と定義した。
+
+\section{問2}
+    \subsection{問題文}
+        上記で挙げた関数の例を、各変数で偏微分せよ (偏導関数=数式で示す)。 \par
+        また、各変数の値に適当な値を設定し、偏微分係数 (具体的数値) を求め、
+        その数値が何を意味するかを説明せよ。
+    \subsection{解答}
+        先ほどの関数をそれぞれの変数で偏微分すると、以下のようになる。
+        \begin{flalign*}
+            R(x, y) &= r \text{とすると} &\\
+            \frac{\partial r}{\partial x} &= \frac{1}{y} &\\
+            \frac{\partial r}{\partial y} &= -\frac{x}{y^2} &
+        \end{flalign*}
+        また、乗車人員数$x$を250人、輸送定員数$y$を500人としたとき、偏微分係数は以下のようになる。
+        \begin{flalign*}
+            \frac{\partial r}{\partial x} &= \frac{1}{500} = 0.002 &\\
+            \frac{\partial r}{\partial y} &= -\frac{250}{500^2} = -0.0005 &
+        \end{flalign*}
+
+\section{問3}
+    \subsection{問題文}
+        各変数の間に依存関係があるかどうかを考察せよ。
+    \subsection{解答}
+        
+
+
+\end{document}
